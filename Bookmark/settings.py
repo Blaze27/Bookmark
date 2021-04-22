@@ -129,4 +129,5 @@ STATIC_URL = '/static/'
 
 INSTALLED_APPS += [
     'bookmarkApp',
+    'taggit',
 ]
