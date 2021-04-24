@@ -1,0 +1,26 @@
+{% extends 'base_generic.html' %}
+
+
+
+{% block title %} Folders {% endblock title %}
+
+
+{% block content %}
+
+
+<div class="container mx-auto">
+    <ul class="list-group border border-warning rounded">
+
+        {% for folder in folder_list %}
+        
+        <li class="list-group-item"> {{ folder }} </li>
+        
+        {% endfor %}
+        </ul>
+</div>
+
+{% endblock content %}
+
+
+
+<!-- <a href="{% url 'bookmarkApp:folder' folder.id %}" class="text-decoration-none text-secondary"><li class="list-group-item"> {{ folder }} </li> </a> -->

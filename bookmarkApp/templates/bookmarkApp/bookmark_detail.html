@@ -1,0 +1,36 @@
+{% extends 'base_generic.html' %}
+
+
+
+{% block title %} Detail {% endblock title %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 bg-light text-right">
+            <a href="{% url 'bookmarkApp:edit-bookmark' bookmark.id %}"><button type="button" class="btn btn-warning">Edit</button></a> 
+            <a href="{% url 'bookmarkApp:delete-bookmark' bookmark.id %}"><button type="button" class="btn btn-warning">Delete</button></a> 
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container mx-auto my-5">
+    <h2>Bookmark Detail</h2>
+
+    <ul class="list-group border border-warning rounded" >
+        <li class="list-group-item"> <b>Name :</b>   {{ bookmark.name }} </li>
+        <li class="list-group-item">  <b>Url :</b> <a href="{{ bookmark.url }}" target="_blank" class="text-decoration-none text-secondary"> {{ bookmark.url }} </a> </li>
+        <li class="list-group-item"> <b>Description :</b>   {{ bookmark.description }} </li>
+        <li class="list-group-item"> Tags :  
+        {% for tag in bookmark.tag.names %}
+           <b> #{{ tag }}</b> 
+        {% endfor %}  </li>
+
+    </ul>
+
+</div>
+
+{% endblock content %}
